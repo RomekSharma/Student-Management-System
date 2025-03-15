@@ -13,5 +13,12 @@ This is a SQL-based project to manage student records, courses, and grades.
 ## Example Queries
 1. Retrieve all students:
    ```sql
-   SELECT * FROM Students;# Student-Management-System
-A SQL-based Student Management System
+   SELECT * FROM Students;
+
+   Retrieve grades for a specific student:
+
+SELECT s.first_name, s.last_name, c.course_name, g.grade
+FROM Grades g
+JOIN Students s ON g.student_id = s.student_id
+JOIN Courses c ON g.course_id = c.course_id
+WHERE s.student_id = 1;
